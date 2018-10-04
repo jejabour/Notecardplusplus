@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AboutPage } from '../about/about';
+import { CreateCardPage } from '../create-card/create-card';
+import { SciencePage } from '../science/science';
+import { HistoryPage } from '../history/history';
 
 @Component({
   selector: 'page-home',
@@ -8,7 +11,6 @@ import { AboutPage } from '../about/about';
 })
 export class HomePage {
 
-AboutPage: AboutPage;
 
   constructor(public navCtrl: NavController) {
 
@@ -16,8 +18,20 @@ AboutPage: AboutPage;
 
   toAbout(){
   
-  this.navCtrl.setRoot(AboutPage);
+  this.navCtrl.push(AboutPage);
   
+  }
+
+  toCreate(){
+    this.navCtrl.push(CreateCardPage);
+  }
+
+  toScience(){
+    this.navCtrl.push(SciencePage)
+  }
+
+  toHistory(){
+    this.navCtrl.push(HistoryPage)
   }
 
 }

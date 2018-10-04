@@ -16,6 +16,8 @@ import { CreateCardPage } from '../create-card/create-card';
 })
 export class HistoryPage {
 
+  CreateCardPage: CreateCardPage;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

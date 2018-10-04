@@ -11,6 +11,7 @@ import { HistoryPage } from '../history/history';
 })
 export class HomePage {
 
+  CreateCardPage: CreateCardPage;
 
   constructor(public navCtrl: NavController) {
 

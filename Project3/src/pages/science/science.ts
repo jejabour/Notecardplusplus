@@ -14,7 +14,12 @@ import { CreateCardPage } from '../create-card/create-card';
   selector: 'page-science',
   templateUrl: 'science.html',
 })
+
+
+
 export class SciencePage {
+
+  CreateCardPage: CreateCardPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

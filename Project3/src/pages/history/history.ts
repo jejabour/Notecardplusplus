@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CreateCardPage } from '../create-card/create-card';
 
 /**
  * Generated class for the HistoryPage page.
@@ -20,6 +21,10 @@ export class HistoryPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HistoryPage');
+  }
+
+  toCreate(){
+    this.navCtrl.push(CreateCardPage);
   }
 
 }

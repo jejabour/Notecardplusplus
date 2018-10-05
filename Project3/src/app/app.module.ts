@@ -10,6 +10,7 @@ import { AboutPage } from '../pages/about/about';
 import { CreateCardPage } from '../pages/create-card/create-card';
 import { HistoryPage } from '../pages/history/history';
 import { SciencePage } from '../pages/science/science';
+import { SettingsPage } from '../pages/settings/settings';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,7 +24,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     CreateCardPage,
     HistoryPage,
-    SciencePage
+    SciencePage,
+    SettingsPage
 
   ],
   imports: [
@@ -39,7 +41,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     CreateCardPage,
     HistoryPage,
-    SciencePage
+    SciencePage,
+    SettingsPage
 
   ],
   providers: [

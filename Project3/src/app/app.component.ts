@@ -10,6 +10,7 @@ import { AboutPage } from '../pages/about/about';
 import { CreateCardPage } from '../pages/create-card/create-card';
 import { HistoryPage } from '../pages/history/history';
 import { SciencePage } from '../pages/science/science';
+import { SettingsPage } from '../pages/settings/settings';
 
 @Component({
   templateUrl: 'app.html'
@@ -32,7 +33,8 @@ export class MyApp {
       { title: 'About', component: AboutPage },
       { title: 'Create Card', component: CreateCardPage},
       { title: 'Science', component: SciencePage },
-      { title: 'History', component: HistoryPage }
+      { title: 'History', component: HistoryPage },
+      { title: 'Settings', component: SettingsPage }
     ];
 
   }

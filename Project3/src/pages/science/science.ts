@@ -29,7 +29,7 @@ export class SciencePage {
   }
 
   toCreate(){
-    this.navCtrl.push(CreateCardPage);
+    this.navCtrl.setRoot(CreateCardPage);
   }
 
 }

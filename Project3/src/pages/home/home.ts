@@ -19,20 +19,20 @@ export class HomePage {
 
   toAbout(){
   
-  this.navCtrl.push(AboutPage);
+  this.navCtrl.setRoot(AboutPage);
   
   }
 
   toCreate(){
-    this.navCtrl.push(CreateCardPage);
+    this.navCtrl.setRoot(CreateCardPage);
   }
 
   toScience(){
-    this.navCtrl.push(SciencePage)
+    this.navCtrl.setRoot(SciencePage)
   }
 
   toHistory(){
-    this.navCtrl.push(HistoryPage)
+    this.navCtrl.setRoot(HistoryPage)
   }
 
 }

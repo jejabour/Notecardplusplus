@@ -7,7 +7,7 @@
 
   <ion-content class="sidemenubuttons">
     <ion-list>
-      <button color="sidebtn" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <button color="sidebtn" menuClose ion-item persistent="true" *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
     </ion-list>
@@ -16,4 +16,4 @@
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-nav [root]="rootPage" persistent="true" #content swipeBackEnabled="true"></ion-nav>

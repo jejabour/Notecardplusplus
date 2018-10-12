@@ -26,7 +26,7 @@ export class HistoryPage {
   }
 
   toCreate(){
-    this.navCtrl.push(CreateCardPage);
+    this.navCtrl.setRoot(CreateCardPage);
   }
 
 }

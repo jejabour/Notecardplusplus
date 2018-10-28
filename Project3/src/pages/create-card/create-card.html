@@ -8,7 +8,7 @@
 
   <ion-navbar>
     <ion-title>Create your Notecard</ion-title>
-    <button ion-button menuToggle>
+       <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
   </ion-navbar>
@@ -17,23 +17,32 @@
 
 
 <ion-content class="bg-style" padding>
-  <h3>Create Your Cards</h3>
+	<h3> Create Your Cards</h3>
 
-  <p>
-    This is the create card page. This is where we intend for the user 
-    create a folder for their stacks of notecards.
-  </p>
 
-  <p>
-    The intended method of crating notecards is as follows:<br>
-    Click Create Card<br>
-    Name your folder, i.e. Science <br>
-    Name your stack, i.e. Chapter 5 <br>
-    Begin creating notecards
-  </p>
+	<p>
+		This is the create card pag. This is where we intend for the user create a folder for their stack of notecards.
+	</p>
 
-  <button ion-button full large class="createCard" secondary
-  id="addfolder">Create a Card
-  </button>
+	<p>
+
+		The intended method of crating notecards is as follows:<br/>
+		Click Create Card<br/>
+		Name your folder, i.e Science <br/>
+		Name your stack, i.e Chapter 5<br/>
+		Begin creating notecards
+
+	</p> 
+
+	<button ion-button full large class="createCard" secondary id="addfolder" (click) = "openAlert()">Create a Card
+	</button>
+
+  <ion-item>
+    
+    <ion-textarea placeholder ="Enter a description"></ion-textarea>
+  </ion-item>
+   
 
 </ion-content>
+
+

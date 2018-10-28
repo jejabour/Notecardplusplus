@@ -4,16 +4,12 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { CreateAccountPage } from '../create-account/create-account';
+import { Users } from "../../models/user";
+import { ForgotPasswordPage } from '../forgot-password/forgot-password';
 
-/*
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
- import {  AngularFireAuth  } from 'angularfire2/auth';
 
-import firebase from 'firebase';
+import {  AngularFireAuth  } from 'angularfire2/auth';
+import firebase, { User } from 'firebase';
 
 @IonicPage()
 @Component({
@@ -21,6 +17,15 @@ import firebase from 'firebase';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+
+
+
+  forgot(){
+    this.navCtrl.push(ForgotPasswordPage);
+  }
+
+  userstuff = {} as Users;
+    
   google = {
      loggedin: false,
      name: '',
@@ -33,10 +38,19 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
-  home(){
-    
-    this.navCtrl.setRoot(HomePage);
-    
+
+  async login(userstuff: Users){
+    try{
+      const result = this.fire.auth.signInWithEmailAndPassword(userstuff.email, userstuff.password);
+      if(result){
+        this.navCtrl.setRoot(HomePage);
+      }
+        
+      console.log(result);
+    }
+    catch(e){
+      console.error(e);
+    }
   }
   createAccount(){
     this.navCtrl.push(CreateAccountPage);

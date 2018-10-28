@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
 import {  AngularFireAuth  } from 'angularfire2/auth';
-import firebase from 'firebase';
-import { LoginPage } from '../login/login';
+import firebase, { User } from 'firebase';
+import { Users } from "../../models/user";
 
 /**
- * Generated class for the SettingsPage page.
+ * Generated class for the ForgotPasswordPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -14,22 +13,22 @@ import { LoginPage } from '../login/login';
 
 @IonicPage()
 @Component({
-  selector: 'page-settings',
-  templateUrl: 'settings.html',
+  selector: 'page-forgot-password',
+  templateUrl: 'forgot-password.html',
 })
-export class SettingsPage {
+export class ForgotPasswordPage {
+
+  userstuff = {} as Users;
 
   constructor(private fire: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SettingsPage');
+    console.log('ionViewDidLoad ForgotPasswordPage');
   }
 
-  logout(){
-    this.fire.auth.signOut();
-    this.navCtrl.setRoot(LoginPage);
+  resetPassword(userstuff: Users): any {
+    return this.fire.auth.sendPasswordResetEmail(userstuff.email);
   }
-
 
 }

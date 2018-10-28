@@ -9,21 +9,16 @@
 
 <ion-content class="bg-style" padding>
     <ion-item>
-        <ion-input type = "text" value="" placeholder="Email"></ion-input>
+        <ion-input type = "text" value="" placeholder="Email" [(ngModel)]="user.email"></ion-input>
       </ion-item>
       <br/>
     
       <ion-item>
-        <ion-input type = "password" placeholder="Password"></ion-input>
+        <ion-input type = "password" placeholder="Password" [(ngModel)]="user.password"></ion-input>
       </ion-item>
       <br/>
 
-      <ion-item>
-          <ion-input type = "password" placeholder="Repeat Password"></ion-input>
-        </ion-item>
-        <br/>
-
-        <button  class="ion-button" ion-button block (click)="home()">
+        <button  class="ion-button" ion-button block (click)="home(user)">
             Submit
           </button>
 </ion-content>

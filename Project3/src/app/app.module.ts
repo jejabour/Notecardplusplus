@@ -12,11 +12,11 @@ import { SciencePage } from '../pages/science/science';
 import { HistoryPage } from '../pages/history/history';
 import { SettingsPage } from '../pages/settings/settings';
 import { LoginPage  } from '../pages/login/login';
-import { CreateAccountPage } from '../pages/create-account/create-account'
+import { CreateAccountPage } from '../pages/create-account/create-account';
+import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-// import { FirebaseProvider } from '../providers/firebase/firebase';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
@@ -43,7 +43,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     HistoryPage,
     SettingsPage,
     LoginPage,
-    CreateAccountPage
+    CreateAccountPage,
+    ForgotPasswordPage
     
   ],
   imports: [
@@ -63,7 +64,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     HistoryPage,
     SettingsPage,
     LoginPage,
-    CreateAccountPage
+    CreateAccountPage,
+    ForgotPasswordPage
    
   
   ],

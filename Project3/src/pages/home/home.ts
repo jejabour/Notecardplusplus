@@ -5,6 +5,7 @@ import { CreateCardPage } from '../create-card/create-card';
 import { SciencePage } from '../science/science';
 import { HistoryPage } from '../history/history';
 
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'

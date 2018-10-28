@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import {  AngularFireAuth  } from 'angularfire2/auth';
+import firebase from 'firebase';
+import { LoginPage } from '../login/login';
+
 /**
  * Generated class for the SettingsPage page.
  *
@@ -15,11 +19,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SettingsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private fire: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingsPage');
   }
+
+  loggedin = true;
+
+  logout(){
+    this.fire.auth.signOut();
+    this.loggedin = false;
+    this.navCtrl.setRoot(LoginPage);
+  }
+
 
 }

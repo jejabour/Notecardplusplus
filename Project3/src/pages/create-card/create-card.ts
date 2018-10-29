@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ActionSheetController} from 'ionic-angular';
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Item } from '../../models/NoteCardItem';
 import { NoteCardsService } from '../../models/NoteCardsService';
 import { Observable } from 'rxjs';
@@ -30,7 +29,6 @@ item: Item = {
 
 
   constructor(
-    private fdb: AngularFireDatabase, 
     public navCtrl: NavController, 
     public alertCtrl: AlertController,
     public navParams: NavParams,

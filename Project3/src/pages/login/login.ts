@@ -9,7 +9,7 @@ import { ForgotPasswordPage } from '../forgot-password/forgot-password';
 
 
 import {  AngularFireAuth  } from 'angularfire2/auth';
-import firebase, { User } from 'firebase';
+import firebase from 'firebase';
 
 @IonicPage()
 @Component({

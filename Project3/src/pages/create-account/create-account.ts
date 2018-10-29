@@ -4,13 +4,6 @@ import { HomePage } from '../home/home';
 import { Users } from '../../models/user';
 import { AngularFireAuth } from "angularfire2/auth"
 
-/**
- * Generated class for the CreateAccountPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-create-account',

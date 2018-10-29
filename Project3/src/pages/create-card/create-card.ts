@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, ActionSheetController} from 'ionic-angular';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { Item } from '../../models/NoteCardItem';
+import { NoteCardsService } from '../../models/NoteCardsService';
+import { Observable } from 'rxjs';
+import 'rxjs/add/operator/map';
+
 
 /**
  * Generated class for the CreateCardPage page.
@@ -14,14 +20,41 @@ import { IonicPage, NavController, NavParams, AlertController} from 'ionic-angul
   templateUrl: 'create-card.html',
 })
 export class CreateCardPage {
- 
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public navParams: NavParams) {
+  notecardList$: Observable<Item[]>
+
+item: Item = {
+  front: '',
+  back: ''
+}
+
+
+  constructor(
+    private fdb: AngularFireDatabase, 
+    public navCtrl: NavController, 
+    public alertCtrl: AlertController,
+    public navParams: NavParams,
+    public actionSheetCtrl: ActionSheetController,
+    private notecard: NoteCardsService
+    ){
+
+      this.notecardList$ = this.notecard.getNoteCardList().snapshotChanges().map(
+        changes => {
+          return changes.map(c => ({
+            key: c.payload.key, ...c.payload.val()
+          }))
+        }
+      )
+
   }
+
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CreateCardPage');
   }
+  
  openAlert() {
     const Alert = this.alertCtrl.create({
       title: 'Alert',
@@ -37,6 +70,12 @@ export class CreateCardPage {
       ]
     });
     Alert.present();
+  }
+
+  addItem(item: Item){
+    this.notecard.addItem(item).then(ref =>{
+      console.log(ref.key);
+    })
   }
 
     

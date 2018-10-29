@@ -21,12 +21,12 @@
 
 
 	<p>
-		This is the create card pag. This is where we intend for the user create a folder for their stack of notecards.
+		This is the create card page. This is where we intend for the user to create a folder for their stack of notecards.
 	</p>
 
 	<p>
 
-		The intended method of crating notecards is as follows:<br/>
+		The intended method of creating notecards is as follows:<br/>
 		Click Create Card<br/>
 		Name your folder, i.e Science <br/>
 		Name your stack, i.e Chapter 5<br/>
@@ -34,14 +34,33 @@
 
 	</p> 
 
-	<button ion-button full large class="createCard" secondary id="addfolder" (click) = "openAlert()">Create a Card
-	</button>
+<ion-item>
+	<ion-label>Front</ion-label>
+	<ion-input [(ngModel)]="item.front" placeholder="Best CS teacher?"></ion-input>
+</ion-item>
 
-  <ion-item>
-    
-    <ion-textarea placeholder ="Enter a description"></ion-textarea>
-  </ion-item>
-   
+<ion-item>
+	<ion-label>Back</ion-label>
+	<ion-input [(ngModel)]="item.back" placeholder="Not Joey"></ion-input>
+</ion-item>
+
+<!-- {{item | json}} -->
+
+<button ion-button block (click)="addItem(item)">Create Card</button>
+
+
+<br/>
+
+<ion-list>
+	<ion-list-header>
+		Saved Cards
+	</ion-list-header>
+		<ion-item *ngFor="let item of notecardList$ | async">
+			{{item.front}}
+			{{item.back}}
+		</ion-item>
+</ion-list>
+
 
 </ion-content>
 

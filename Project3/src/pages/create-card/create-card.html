@@ -1,9 +1,3 @@
-<!--
-  Generated template for the CreateCardPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -20,20 +14,6 @@
 	<h3> Create Your Cards</h3>
 
 
-	<p>
-		This is the create card page. This is where we intend for the user to create a folder for their stack of notecards.
-	</p>
-
-	<p>
-
-		The intended method of creating notecards is as follows:<br/>
-		Click Create Card<br/>
-		Name your folder, i.e Science <br/>
-		Name your stack, i.e Chapter 5<br/>
-		Begin creating notecards
-
-	</p> 
-
 <ion-item>
 	<ion-label>Front</ion-label>
 	<ion-input [(ngModel)]="item.front" placeholder="Best CS teacher?"></ion-input>
@@ -46,7 +26,8 @@
 
 <!-- {{item | json}} -->
 
-<button ion-button block (click)="addItem(item)">Create Card</button>
+<button ion-button block class="ion-button" (click)="addItem(item)">Create Card</button>
+<button ion-button block class="removeButton" (click) = "removeItem(item)" >Remove All Cards</button>
 
 
 <br/>
@@ -55,9 +36,11 @@
 	<ion-list-header>
 		Saved Cards
 	</ion-list-header>
-		<ion-item *ngFor="let item of notecardList$ | async">
+		<ion-item *ngFor="let item of notecardList$ | async; let i = index" (click)="delete(i)">
+
 			{{item.front}}
 			{{item.back}}
+
 		</ion-item>
 </ion-list>
 

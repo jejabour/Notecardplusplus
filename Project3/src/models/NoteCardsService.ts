@@ -19,4 +19,8 @@ export class NoteCardsService {
         return this.notecardsRef.push(item)
     }
 
+    removeItem(item: Item){
+        return this.notecardsRef.remove()
+    }
+
 }

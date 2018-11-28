@@ -29,8 +29,6 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'About', component: AboutPage },
       { title: 'Create Card', component: CreateCardPage},
-      { title: 'Science', component: SciencePage },
-      { title: 'History', component: HistoryPage },
       { title: 'Account Settings', component: SettingsPage }
     ];
 

@@ -1,49 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ActionSheetController} from 'ionic-angular';
 import { Item } from '../../models/NoteCardItem';
 import { NoteCardsService } from '../../models/NoteCardsService';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
-
-
-@IonicPage()
+/**
+ * Generated class for the CreateCardPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+ @IonicPage()
 @Component({
   selector: 'page-create-card',
   templateUrl: 'create-card.html',
 })
 export class CreateCardPage {
-
-  notecardList$: Observable<Item[]>
-
-item: Item = {
-  front: '',
-  back: ''
-}
-
-
-  constructor(
-    public navCtrl: NavController, 
-    public alertCtrl: AlertController,
-    public navParams: NavParams,
-    public actionSheetCtrl: ActionSheetController,
-    private notecard: NoteCardsService
-    ){
-
-      this.notecardList$ = this.notecard.getNoteCardList().snapshotChanges().map(
-        changes => {
+ 
+ notecardList$: Observable<Item[]>
+  item: Item = {
+     front: '',
+    back: ''
+ }
+   constructor(public navCtrl: NavController, public alertCtrl: AlertController, public navParams: NavParams, public actionSheetCtrl: ActionSheetController, private notecard: NoteCardsService) {
+       this.notecardList$ = this.notecard.getNoteCardList().snapshotChanges().map( changes => {
+           
           return changes.map(c => ({
-            key: c.payload.key, ...c.payload.val()
+              key: c.payload.key, ...c.payload.val()
           }))
-        }
-      )
-
+          
+      }
+    )
   }
-
-  ionViewDidLoad() {
+   ionViewDidLoad() {
     console.log('ionViewDidLoad CreateCardPage');
   }
-  
- openAlert() {
+ showAlert() {
     const Alert = this.alertCtrl.create({
       title: 'Alert',
       //subTitle: '',
@@ -59,13 +51,14 @@ item: Item = {
     });
     Alert.present();
   }
-
-  addItem(item: Item){
+   addItem(item: Item){
     this.notecard.addItem(item).then(ref =>{
       console.log(ref.key);
     })
   }
-
+  removeItem(item: Item){
+        this.notecard.removeItem(item);
+ 
+  }
     
 }
-

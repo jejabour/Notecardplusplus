@@ -1,32 +1,43 @@
 <ion-header>
-    <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+<ion-navbar>
+  <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Home</ion-title>
+</ion-navbar>
 </ion-header>
 
+<!-- This is at the top of every page to set the style of the pages made in src > app > app.scss -->
 <ion-content class="bg-style" padding>
-  <h1><strong>Welcome to Notecard++</strong></h1>
-  
-  <button ion-button full large class="createCard"  (click)="toCreate()">
-    New Folder
-  </button>
+
+<h1><strong>Welcome to Notecard++</strong></h1>
 
 
-  <ion-footer>
-      <ion-toolbar>
-          <button id="about" class="ion-button" ion-button
-           (click)="toAbout()">Visit our About Page
-          </button>
+<button ion-button full large class="createCard"  (click)="toCreate()">
+  New Folder
+</button>
 
-      </ion-toolbar>
-  </ion-footer>
+<!-- These are just examples of what we wanted to happen when the user made stacks -->
+<button ion-button full large class="folder" (click)="toScience()">
+  Science
+</button>
+
+<button ion-button full large class="folder" (click)="toHistory()">
+    History
+</button>
+
+
+<ion-footer>
+    <ion-toolbar>
+        <button id="about" class="ion-button" ion-button
+         (click)="toAbout()">Visit our About Page
+        </button>
+
+    </ion-toolbar>
+</ion-footer>
 
 </ion-content>
-
 
 
 

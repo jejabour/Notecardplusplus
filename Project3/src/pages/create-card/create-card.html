@@ -14,16 +14,20 @@
 	<h3> Create Your Cards</h3>
 
 
+<!-- This is the textbox item for the front of the notecard -->
 <ion-item>
 	<ion-label>Front</ion-label>
+	<!-- From my understanding, the ng thing (ngModel here and ngFor later) has something to do with getting the info to Firebase. I think -->
 	<ion-input [(ngModel)]="item.front" placeholder="Best CS teacher?"></ion-input>
 </ion-item>
 
+<!-- Textbox for the back of the notecard -->
 <ion-item>
 	<ion-label>Back</ion-label>
 	<ion-input [(ngModel)]="item.back" placeholder="Not Joey"></ion-input>
 </ion-item>
 
+<!-- This was used for testing. Showed the data being sent -->
 <!-- {{item | json}} -->
 
 <button ion-button block class="ion-button" (click)="addItem(item)">Create Card</button>
@@ -32,10 +36,13 @@
 
 <br/>
 
+<!-- This is a list of the stuff currently in the database -->
+<!-- The ;let i = index and click delete(i) stuff was fopr deleting individual things -->
 <ion-list>
 	<ion-list-header>
 		Saved Cards
 	</ion-list-header>
+	<!-- Gets the data from Firebase -->
 		<ion-item *ngFor="let item of notecardList$ | async; let i = index" (click)="delete(i)">
 
 			{{item.front}}

@@ -18,6 +18,8 @@ export class SettingsPage {
     console.log('ionViewDidLoad SettingsPage');
   }
 
+
+  // Use Firebase's neat signout feature to sign the user out and kick them to the login page
   logout(){
     this.fire.auth.signOut();
     this.navCtrl.setRoot(LoginPage);

@@ -15,6 +15,13 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+
+// All of these css properties werer used on various pages throughout the app
+// Some were used as a template for the theme of the app, and were therefore
+// used on all of the pages. It was easier to do this than to reimplement
+// the theme on everypage. It also somehow allowed me to have that neat
+// hoverover effect on the buttons
+
 .bg-style{
     background: #CDE9F7;
 }

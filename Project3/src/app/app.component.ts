@@ -7,8 +7,6 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { AboutPage } from '../pages/about/about';
 import { CreateCardPage } from '../pages/create-card/create-card';
-import { HistoryPage } from '../pages/history/history';
-import { SciencePage } from '../pages/science/science';
 import { SettingsPage } from '../pages/settings/settings';
 
 @Component({
@@ -24,7 +22,7 @@ export class MyApp {
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
-    // used for an example of ngFor and navigation
+    // This is what appears in the sidebar
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'About', component: AboutPage },

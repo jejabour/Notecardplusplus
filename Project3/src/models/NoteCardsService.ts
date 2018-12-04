@@ -1,3 +1,6 @@
+
+// An online tutorial told me to create this file, I believe it's jsut used to keep constructors and stuff organized
+
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Item } from './NoteCardItem';

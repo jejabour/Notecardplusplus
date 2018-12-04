@@ -18,45 +18,54 @@ import firebase from 'firebase';
 })
 export class LoginPage {
 
-
-
+// Navigates to the forgot password page
   forgot(){
     this.navCtrl.push(ForgotPasswordPage);
   }
 
+  // Creates a list(?) of User info
   userstuff = {} as Users;
     
+  // Google login stuff
   google = {
      loggedin: false,
      name: '',
      profilePicture: '',
      email:''
   }
-  constructor(private fire: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
-  }
 
+
+  constructor(private fire: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {}
+
+  // Just a console check for if the Login paage loaded
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
 
+  // Async - dopesn't do the function until the value from a promise is fulfilled
   async login(userstuff: Users){
+
+    // This try catch sees if the user can login, if not, keep them on the login
     try{
       const result = this.fire.auth.signInWithEmailAndPassword(userstuff.email, userstuff.password);
       if(result){
         this.navCtrl.setRoot(HomePage);
       }
         
+      // print the result
       console.log(result);
     }
     catch(e){
       console.error(e);
     }
   }
+
+  // Sends em to the create account page
   createAccount(){
     this.navCtrl.push(CreateAccountPage);
   }
  
-
+  // Obvs google sign in stuff
   googleSignin(){
   
       this.fire.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())

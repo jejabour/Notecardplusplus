@@ -5,7 +5,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { AboutPage } from '../pages/about/about';
 import { CreateCardPage } from '../pages/create-card/create-card';
 import { SciencePage } from '../pages/science/science';
@@ -39,7 +38,6 @@ import { NoteCardsService } from '../models/NoteCardsService';
     MyApp,
     HomePage,
     AboutPage,
-    ListPage,
     CreateCardPage,
     SciencePage,
     HistoryPage,
@@ -63,7 +61,6 @@ import { NoteCardsService } from '../models/NoteCardsService';
     AboutPage,
     CreateCardPage,
     SciencePage,
-    ListPage,
     HistoryPage,
     SettingsPage,
     LoginPage,
